@@ -19,22 +19,57 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
+
+
 //SENDING A .GET REQUEST FOR THE RESPONSE DATA
-axios.get("https://lambda-times-backend.herokuapp.com/articles")
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+        console.log(response.data.articles)
+        
+        const data = response.data.articles
+        const keys = Object.values(data);
 
-.then((response) => {
-    console.log(response)
-    parentDiv3.append(cardMaker(response))
-  
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+        console.log(keys)
 
+        let javascript = keys[0]
+        javascript.forEach(element => {cardMaker(element) 
+            console.log(element)
+            parentDiv3.appendChild(cardMaker(element))
+            
+        });
+
+        let bootstrap = keys[1]
+        bootstrap.forEach(element => { cardMaker(element)
+            console.log(element)
+            parentDiv3.appendChild(cardMaker(element))
+        })
+
+        let technology = keys[2]
+        technology.forEach(element => { cardMaker(element)
+            console.log(element)
+            parentDiv3.appendChild(cardMaker(element))
+        })
+
+        let jquery = keys[3]
+        jquery.forEach(element => { cardMaker(element)
+            console.log(element)
+            parentDiv3.appendChild(cardMaker(element))
+        })
+
+        let node = keys[4]
+        node.forEach(element => { cardMaker(element)
+            console.log(element)
+            parentDiv3.appendChild(cardMaker(element))
+        })
+
+        
+    })
+    .catch(error => {
+        console.log(error)
+    })
 
 //DECLARING THE PARENT DIV
 const parentDiv3 = document.querySelector("div.cards-container")
-console.log(parentDiv3)
 
 //CREATING A FUNCTION
 function cardMaker(object){
@@ -67,5 +102,5 @@ signature.textContent = "By " + object.authorName
 //IMAGE SOURCES(IF APPLICABLE)
 image.src = object.authorPhoto
 
-return cardMaker
+return card
 }

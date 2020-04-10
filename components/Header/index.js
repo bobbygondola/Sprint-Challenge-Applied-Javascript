@@ -13,8 +13,6 @@
 
 //DECLARING THE PARENT DIV
 const parentDiv = document.querySelector(".header-container");
-console.log(parentDiv);
-
 
 //APPENDING TO THE HTML
 parentDiv.appendChild(header());
