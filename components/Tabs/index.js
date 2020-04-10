@@ -19,6 +19,24 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
       });
   });
 
+// //CREATING AN ARRAY FROM THE OBJECT.DATA.TOPICS
+// const topicsArray = object.data.topics;
+
+// //DOING A FOR EACH TO MAKE TOPIC TABS INDIVUALS
+// topicsArray.forEach((topic) => {
+//     axios
+//       .get(`https://lambda-times-backend.herokuapp.com/${topic}`)
+//       .then((response) => {
+//         parentDiv1.appendChild(tabMaker(response));
+//       })
+  
+  
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   });
+
+//DECLARING THE PARENT DIV IN THE HTML
 const parentDiv1 = document.querySelector("div.topics")
 console.log(parentDiv1)
 
